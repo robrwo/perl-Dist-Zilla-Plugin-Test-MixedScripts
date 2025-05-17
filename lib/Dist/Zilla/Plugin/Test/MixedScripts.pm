@@ -3,6 +3,8 @@ package Dist::Zilla::Plugin::Test::MixedScripts;
 use v5.14;
 use warnings;
 
+# ABSTRACT: author tests to ensure there is no mixed unicode
+
 use Moose;
 use Path::Tiny;
 use Sub::Exporter::ForMethods 'method_installer';
@@ -17,6 +19,19 @@ with
   'Dist::Zilla::Role::PrereqSource';
 
 our $VERSION = 'v0.1.0';
+
+=head1 DESCRIPTION
+
+This generates an author L<Test::MixedScripts>.
+
+This is an extension of L<Dist::Zilla::Plugin::InlineFiles>, providing the file F<xt/author/mixed-unicode-scripts.t> for
+testing against mixed Unicode scripts.
+
+=option filename
+
+This is the filename of the test to add. Defaults to F<xt/author/mixed-unicode-scripts.t>.
+
+=cut
 
 has filename => (
     is      => 'ro',
@@ -82,6 +97,13 @@ sub register_prereqs {
 }
 
 __PACKAGE__->meta->make_immutable;
+
+=head1 append:AUTHOR
+
+This code was based on L<Dist::Zilla::Plugin::Test::EOL> by Florian Ragwitz <rafl@debian.org>, Caleb Cushing
+<xenoterracide@gmail.com> and Karen Etheridge <ether@cpan.org>.
+
+=cut
 
 __DATA__
 ___[ __TEST__ ]___
