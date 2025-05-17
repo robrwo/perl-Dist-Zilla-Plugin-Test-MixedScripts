@@ -42,7 +42,15 @@ my $file      = $build_dir->child(qw(xt author mixed-unicode-scripts.t));
 ok( -e $file, $file . ' created' );
 my $content = $file->slurp_utf8;
 
-note $content;
+my @files = (
+    path(qw(lib Foo.pm)),
+    path(qw(lib Bar.pod)),
+    path(qw(bin myscript)),
+    path(qw(t foo.t)),
+);
+like($content, qr/'\Q$_\E'/m, "test checks $_") foreach @files;
+
+# note $content;
 
 cmp_deeply(
     $tzil->distmeta,
@@ -64,6 +72,8 @@ cmp_deeply(
                             config => {
                                 'Dist::Zilla::Plugin::Test::MixedScripts' => {
                                     filename => 'xt/author/mixed-unicode-scripts.t',
+                                    'finder' => [ ':ExecFiles', ':InstallModules', ':TestFiles' ]
+
                                 },
                             },
                             name    => 'Test::MixedScripts',

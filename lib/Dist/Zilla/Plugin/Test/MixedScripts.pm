@@ -16,6 +16,11 @@ with
   'Dist::Zilla::Role::FileGatherer',
   'Dist::Zilla::Role::FileMunger',
   'Dist::Zilla::Role::TextTemplate',
+  'Dist::Zilla::Role::FileFinderUser' => {
+    method           => 'found_files',
+    finder_arg_names => ['finder'],
+    default_finders  => [ ':InstallModules', ':ExecFiles', ':TestFiles' ],
+  },
   'Dist::Zilla::Role::PrereqSource';
 
 our $VERSION = 'v0.1.0';
@@ -40,16 +45,36 @@ has filename => (
     default => sub { return 'xt/author/mixed-unicode-scripts.t' },
 );
 
+=option file
+
+This is a filename to also test, in addition to any files found earlier. This option can be repeated to specify multiple
+additional files.
+
+=cut
+
+has files => (
+    isa => 'ArrayRef[Str]',
+    traits => ['Array'],
+    handles => { files => 'elements' },
+    lazy => 1,
+    default => sub { [] },
+);
+
 has _file_obj => (
     is  => 'rw',
     isa => role_type('Dist::Zilla::Role::File'),
 );
+
+sub mvp_multivalue_args { 'files' }
+
+sub mvp_aliases { return { file => 'files' } }
 
 around dump_config => sub {
     my ( $orig, $self ) = @_;
     my $config = $self->$orig;
     $config->{ +__PACKAGE__ } = {
         filename => $self->filename,
+        finder   => [ sort @{ $self->finder } ],
         blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
     };
     return $config;
@@ -71,13 +96,20 @@ sub gather_files {
 
 sub munge_files {
     my $self = shift;
+
+    my @filenames = map { path( $_->name )->relative('.')->stringify }
+      grep { not( $_->can('is_bytes') and $_->is_bytes ) } @{ $self->found_files };
+    push @filenames, $self->files;
+    $self->log_debug( 'adding file ' . $_ ) foreach @filenames;
+
     my $file = $self->_file_obj;
     $file->content(
         $self->fill_in_string(
             $file->content,
             {
-                dist   => \( $self->zilla ),
-                plugin => \$self,
+                dist      => \( $self->zilla ),
+                plugin    => \$self,
+                filenames => [ sort @filenames ],
             },
         )
     );
@@ -114,8 +146,12 @@ use warnings;
 
 use Test::More 1.302200;
 
-use Test::MixedScripts qw( all_perl_files_scripts_ok );
+use Test::MixedScripts qw( file_scripts_ok );
 
-all_perl_files_scripts_ok();
+my @files = (
+{{ join(",\n", map { "    '" . $_ . "'" } map { s/'/\\'/g; $_ } @filenames) }}
+);
+
+file_scripts_ok($_) for @files;
 
 done_testing;
