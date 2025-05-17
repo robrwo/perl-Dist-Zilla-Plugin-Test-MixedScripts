@@ -47,8 +47,9 @@ has filename => (
 
 =option file
 
-This is a filename to also test, in addition to any files found earlier. This option can be repeated to specify multiple
-additional files.
+This is a filename to also test, in addition to any files found earlier.
+
+This option can be repeated to specify multiple additional files.
 
 =cut
 
@@ -60,12 +61,26 @@ has files => (
     default => sub { [] },
 );
 
+=option exclude
+
+This is a regular expression of filenames to exclude.
+
+This option can be repeated to specify multiple patterns.
+
+=cut
+
+has exclude => (
+    is      => 'ro',
+    isa     => 'ArrayRef',
+    default => sub { [] },
+);
+
 has _file_obj => (
     is  => 'rw',
     isa => role_type('Dist::Zilla::Role::File'),
 );
 
-sub mvp_multivalue_args { 'files' }
+sub mvp_multivalue_args { qw( files exclude ) }
 
 sub mvp_aliases { return { file => 'files' } }
 
@@ -97,8 +112,14 @@ sub gather_files {
 sub munge_files {
     my $self = shift;
 
+    # Based on Dist::Zilla::Plugin::GatherDir
+    my $exclude = qr/\000/;
+    $exclude = qr/(?:$exclude)|$_/ for @{ $self->exclude };
+
     my @filenames = map { path( $_->name )->relative('.')->stringify }
-      grep { not( $_->can('is_bytes') and $_->is_bytes ) } @{ $self->found_files };
+      grep { not( $_->can('is_bytes') and $_->is_bytes ) }
+      grep { $_ !~ $exclude }
+      @{ $self->found_files };
     push @filenames, $self->files;
     $self->log_debug( 'adding file ' . $_ ) foreach @filenames;
 
