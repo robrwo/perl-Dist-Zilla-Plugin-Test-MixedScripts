@@ -6,6 +6,8 @@ use warnings;
 # ABSTRACT: author tests to ensure there is no mixed unicode
 
 use Moose;
+
+use List::Util 1.45 qw( uniqstr );
 use Path::Tiny;
 use Sub::Exporter::ForMethods 'method_installer';
 use Data::Section 0.004 { installer => method_installer }, '-setup';
@@ -85,6 +87,21 @@ has exclude => (
     default => sub { [] },
 );
 
+=option script
+
+This specifies the scripts to test for.  If none are specified, it defaults to the defaults for L<Test::MixedScripts>.
+
+=cut
+
+has scripts => (
+    isa     => 'ArrayRef[Str]',
+    traits  => ['Array'],
+    handles => { scripts => 'elements' },
+    lazy    => 1,
+    default => sub { [] },
+);
+
+
 has _file_obj => (
     is  => 'rw',
     isa => role_type('Dist::Zilla::Role::File'),
@@ -100,6 +117,7 @@ around dump_config => sub {
     $config->{ +__PACKAGE__ } = {
         filename => $self->filename,
         finder   => [ sort @{ $self->finder } ],
+        scripts  => $self->scripts,
         blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
     };
     return $config;
@@ -133,6 +151,8 @@ sub munge_files {
     push @filenames, $self->files;
     $self->log_debug( 'adding file ' . $_ ) foreach @filenames;
 
+    my @scripts = $self->scripts;
+
     my $file = $self->_file_obj;
     $file->content(
         $self->fill_in_string(
@@ -141,6 +161,7 @@ sub munge_files {
                 dist      => \( $self->zilla ),
                 plugin    => \$self,
                 filenames => [ sort @filenames ],
+                scripts   => [ uniqstr @scripts ],
             },
         )
     );
@@ -179,10 +200,12 @@ use Test::More 1.302200;
 
 use Test::MixedScripts qw( file_scripts_ok );
 
+my @scxs = ( {{ join( ", ", map { "'" . $_ . "'" } @scripts ) }} );
+
 my @files = (
 {{ join(",\n", map { "    '" . $_ . "'" } map { s/'/\\'/g; $_ } @filenames) }}
 );
 
-file_scripts_ok($_) for @files;
+file_scripts_ok($_, { scripts => \@scxs } ) for @files;
 
 done_testing;
