@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Test::MixedScripts - author tests to ensure there is no mix
 
 # VERSION
 
-version v0.1.2
+version v0.1.3
 
 # DESCRIPTION
 
