@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::Test::MixedScripts;
 
-use v5.14;
+use v5.16;
 use warnings;
 
 # ABSTRACT: author tests to ensure there is no mixed unicode
