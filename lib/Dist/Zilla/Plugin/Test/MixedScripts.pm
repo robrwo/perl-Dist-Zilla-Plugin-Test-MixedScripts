@@ -45,6 +45,16 @@ has filename => (
     default => sub { return 'xt/author/mixed-unicode-scripts.t' },
 );
 
+=option finder
+
+This is the name of a C<FileFinder> for finding files to check. The default value is C<:InstallModules>, C<:ExecFiles> (see also
+L<Dist::Zilla::Plugin::ExecDir>) and C<:TestFiles>.
+
+This option can be used more than once.
+
+Other predefined finders are listed in "default_finders" in L<Dist::Zilla::Role::FileFinderUser>.
+You can define your own with the L<FileFinder::ByName plugin|Dist::Zilla::Plugin::FileFinder::ByName>.
+
 =option file
 
 This is a filename to also test, in addition to any files found earlier.
