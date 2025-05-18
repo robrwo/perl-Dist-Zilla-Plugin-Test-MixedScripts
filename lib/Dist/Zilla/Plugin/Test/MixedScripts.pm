@@ -185,6 +185,17 @@ sub register_prereqs {
 
 __PACKAGE__->meta->make_immutable;
 
+
+=for Pod::Coverage dump_config
+
+=for Pod::Coverage gather_files
+
+=for Pod::Coverage munge_files
+
+=for Pod::Coverage mvp_aliases
+
+=for Pod::Coverage register_prereqs
+
 =head1 append:BUGS
 
 =head2 Reporting Security Vulnerabilities
