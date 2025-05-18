@@ -1,17 +1,23 @@
-use strict;
+use v5.16;
 use warnings;
-use Test::More 0.88;
-use Test::Warnings 0.009 ':no_end_test', ':all';
+
+use Test::More 1.302200;
+use Test::Warnings 0.009 qw( :no_end_test :all );
 use Test::DZil;
 use Path::Tiny;
-use File::pushd 'pushd';
+use File::pushd qw( pushd );
 use Test::Deep;
+
 my $tzil = Builder->from_config(
     { dist_root => 'does-not-exist' },
     {
         add_files => {
-            path(qw(source dist.ini)) =>
-              simple_ini( [ GatherDir => ], [ ExecDir => ], [ MetaConfig => ], ['Test::MixedScripts'], ),
+            path(qw(source dist.ini)) => simple_ini(
+                ['GatherDir'],             #
+                ['ExecDir'],               #
+                ['MetaConfig'],            #
+                ['Test::MixedScripts'],    #
+            ),
             path(qw(source lib Foo.pm)) => <<'MODULE',
 package Foo;
 use strict;
@@ -42,13 +48,8 @@ my $file      = $build_dir->child(qw(xt author mixed-unicode-scripts.t));
 ok( -e $file, $file . ' created' );
 my $content = $file->slurp_utf8;
 
-my @files = (
-    path(qw(lib Foo.pm)),
-    path(qw(lib Bar.pod)),
-    path(qw(bin myscript)),
-    path(qw(t foo.t)),
-);
-like($content, qr/'\Q$_\E'/m, "test checks $_") foreach @files;
+my @files = ( path(qw(lib Foo.pm)), path(qw(lib Bar.pod)), path(qw(bin myscript)), path(qw(t foo.t)), );
+like( $content, qr/'\Q$_\E'/m, "test checks $_" ) foreach @files;
 
 note $content;
 

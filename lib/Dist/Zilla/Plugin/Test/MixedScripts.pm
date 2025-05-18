@@ -11,7 +11,8 @@ use List::Util 1.45 qw( uniqstr );
 use Path::Tiny;
 use Sub::Exporter::ForMethods 'method_installer';
 use Data::Section 0.004 { installer => method_installer }, '-setup';
-use Moose::Util::TypeConstraints 'role_type';
+use Moose::Util::TypeConstraints qw( role_type );
+
 use namespace::autoclean;
 
 with
@@ -56,6 +57,12 @@ This option can be used more than once.
 
 Other predefined finders are listed in "default_finders" in L<Dist::Zilla::Role::FileFinderUser>.
 You can define your own with the L<FileFinder::ByName plugin|Dist::Zilla::Plugin::FileFinder::ByName>.
+
+=cut
+
+sub mvp_multivalue_args { qw( files exclude ) }
+
+sub mvp_aliases { return { file => 'files', script => 'scripts' } }
 
 =option file
 
@@ -107,10 +114,6 @@ has _file_obj => (
     isa => role_type('Dist::Zilla::Role::File'),
 );
 
-sub mvp_multivalue_args { qw( files exclude ) }
-
-sub mvp_aliases { return { file => 'files' } }
-
 around dump_config => sub {
     my ( $orig, $self ) = @_;
     my $config = $self->$orig;
@@ -149,7 +152,7 @@ sub munge_files {
       grep { $_ !~ $exclude }
       @{ $self->found_files };
     push @filenames, $self->files;
-    $self->log_debug( 'adding file ' . $_ ) foreach @filenames;
+    $self->log_debug( 'adding file ' . $_ ) for @filenames;
 
     my @scripts = $self->scripts;
 
