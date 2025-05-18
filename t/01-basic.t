@@ -74,7 +74,7 @@ cmp_deeply(
                                 'Dist::Zilla::Plugin::Test::MixedScripts' => {
                                     filename => 'xt/author/mixed-unicode-scripts.t',
                                     finder   => [ ':ExecFiles', ':InstallModules', ':TestFiles' ],
-                                    scripts  => undef,
+                                    scripts  => [ ],
                                 },
                             },
                             name    => 'Test::MixedScripts',

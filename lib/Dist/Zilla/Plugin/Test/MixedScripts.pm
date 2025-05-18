@@ -120,7 +120,7 @@ around dump_config => sub {
     $config->{ +__PACKAGE__ } = {
         filename => $self->filename,
         finder   => [ sort @{ $self->finder } ],
-        scripts  => $self->scripts,
+        scripts  => [ $self->scripts ],
         blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
     };
     return $config;
