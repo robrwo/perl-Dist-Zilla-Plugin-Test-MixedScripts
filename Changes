@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Bug Fixes]
+  - Fixed the test prerequisites.
 
 v0.1.0    2025-05-18 11:53:04+01:00 Europe/London
   - Initial version.

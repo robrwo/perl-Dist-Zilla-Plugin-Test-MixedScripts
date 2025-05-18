@@ -29,6 +29,7 @@ on 'test' => sub {
   requires "Module::Metadata" => "1.000015";
   requires "Test::DZil" => "0";
   requires "Test::Deep" => "0";
+  requires "Test::MixedScripts" => "v0.2.0";
   requires "Test::More" => "1.302200";
   requires "Test::Warnings" => "0.009";
   requires "strict" => "0";
