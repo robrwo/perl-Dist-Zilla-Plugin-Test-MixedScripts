@@ -33,7 +33,14 @@ our $VERSION = 'v0.1.2';
 This generates an author L<Test::MixedScripts>.
 
 This is an extension of L<Dist::Zilla::Plugin::InlineFiles>, providing the file F<xt/author/mixed-unicode-scripts.t> for
-testing against mixed Unicode scripts.
+testing against mixed Unicode scripts that are potentially confusing or malicious.
+
+For example, the text for the domain names "E<0x043e>nE<0x0435>.example.com" and "one.example.com" look indistinguishable in many fonts,
+but the first one has Cyrillic letters.  If your software interacted with a service on the second domain, then someone
+can operate a service on the first domain and attempt to fool developers into using their domain instead.
+
+This might be through a malicious patch submission, or even text from an email or web page that they have convinced a
+developer to copy and paste into their code.
 
 =option filename
 
