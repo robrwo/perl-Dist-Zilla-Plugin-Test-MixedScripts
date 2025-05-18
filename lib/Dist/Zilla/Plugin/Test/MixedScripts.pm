@@ -60,7 +60,7 @@ You can define your own with the L<FileFinder::ByName plugin|Dist::Zilla::Plugin
 
 =cut
 
-sub mvp_multivalue_args { qw( files exclude ) }
+sub mvp_multivalue_args { qw( files exclude scripts ) }
 
 sub mvp_aliases { return { file => 'files', script => 'scripts' } }
 
