@@ -45,6 +45,17 @@ This option can be repeated to specify multiple patterns.
 
 This specifies the scripts to test for.  If none are specified, it defaults to the defaults for [Test::MixedScripts](https://metacpan.org/pod/Test%3A%3AMixedScripts).
 
+# KNOWN ISSUES
+
+The default ["finder"](#finder) does not include XS-related files. You will have to add them manually using the ["file"](#file) option,
+for example, in the `dist.ini`:
+
+```
+[Test::MixedScripts]
+file = XS.xs
+file = XS.c
+```
+
 # SOURCE
 
 The development version is on github at [https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts](https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts)

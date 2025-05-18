@@ -196,6 +196,15 @@ __PACKAGE__->meta->make_immutable;
 
 =for Pod::Coverage register_prereqs
 
+=head1 KNOWN ISSUES
+
+The default L</finder> does not include XS-related files. You will have to add them manually using the L</file> option,
+for example, in the F<dist.ini>:
+
+    [Test::MixedScripts]
+    file = XS.xs
+    file = XS.c
+
 =head1 append:BUGS
 
 =head2 Reporting Security Vulnerabilities
