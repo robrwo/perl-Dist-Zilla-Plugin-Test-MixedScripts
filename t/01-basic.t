@@ -50,7 +50,7 @@ my @files = (
 );
 like($content, qr/'\Q$_\E'/m, "test checks $_") foreach @files;
 
-# note $content;
+note $content;
 
 cmp_deeply(
     $tzil->distmeta,
