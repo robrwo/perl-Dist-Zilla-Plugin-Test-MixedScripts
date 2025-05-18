@@ -185,6 +185,13 @@ sub register_prereqs {
 
 __PACKAGE__->meta->make_immutable;
 
+=head1 append:BUGS
+
+=head2 Reporting Security Vulnerabilities
+
+Security issues should not be reported on the bugtracker website. Please see F<SECURITY.md> for instructions how to
+report security vulnerabilities
+
 =head1 append:AUTHOR
 
 This code was based on L<Dist::Zilla::Plugin::Test::EOL> by Florian Ragwitz <rafl@debian.org>, Caleb Cushing
