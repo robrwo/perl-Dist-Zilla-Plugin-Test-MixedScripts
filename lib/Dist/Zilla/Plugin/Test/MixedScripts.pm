@@ -186,7 +186,7 @@ sub register_prereqs {
             type  => 'requires',
         },
         'Test::More'         => '1.302200',
-        'Test::MixedScripts' => '0',
+        'Test::MixedScripts' => 'v0.3.0',
     );
 }
 
