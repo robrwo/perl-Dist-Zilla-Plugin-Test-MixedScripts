@@ -1,6 +1,6 @@
 # NAME
 
-Dist::Zilla::Plugin::Test::MixedScripts - author tests to ensure there is no mixed unicode
+Dist::Zilla::Plugin::Test::MixedScripts - author tests to ensure there is no mixed Unicode
 
 # VERSION
 

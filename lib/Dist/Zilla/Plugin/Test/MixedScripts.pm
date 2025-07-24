@@ -3,7 +3,7 @@ package Dist::Zilla::Plugin::Test::MixedScripts;
 use v5.16;
 use warnings;
 
-# ABSTRACT: author tests to ensure there is no mixed unicode
+# ABSTRACT: author tests to ensure there is no mixed Unicode
 
 use Moose;
 
@@ -27,6 +27,12 @@ with
   'Dist::Zilla::Role::PrereqSource';
 
 our $VERSION = 'v0.1.4';
+
+=begin :prelude
+
+=for stopwords Cushing Etheridge Florian Ragwitz Unicode
+
+=end :prelude
 
 =head1 DESCRIPTION
 
