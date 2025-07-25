@@ -7,6 +7,8 @@ Revision history for {{ $dist->name }}:
   [Tests]
   - Use Test2 instead of Test::More for the generated tests. (GH#3 @haarg)
 
+  - Added missing perlcritic.rc for author tests. (GH#2)
+
   - Add POD spelling tests.
 
   [Other]
