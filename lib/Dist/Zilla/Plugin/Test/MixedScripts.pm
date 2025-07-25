@@ -191,7 +191,7 @@ sub register_prereqs {
             phase => 'develop',
             type  => 'requires',
         },
-        'Test::More'         => '1.302200',
+        'Test2::Tools::Basic' => '1.302200',
         'Test::MixedScripts' => 'v0.3.0',
     );
 }
@@ -246,7 +246,7 @@ use warnings;
 
 # This test was generated with {{ ref $plugin }} {{ $plugin->VERSION }}.
 
-use Test::More 1.302200;
+use Test2::Tools::Basic 1.302200;
 
 use Test::MixedScripts qw( file_scripts_ok );
 
