@@ -27,10 +27,10 @@ on 'test' => sub {
   requires "File::pushd" => "0";
   requires "FindBin" => "0";
   requires "Module::Metadata" => "1.000015";
+  requires "Test2::V0" => "0";
   requires "Test::DZil" => "0";
-  requires "Test::Deep" => "0";
   requires "Test::MixedScripts" => "v0.3.0";
-  requires "Test::More" => "1.302200";
+  requires "Test::More" => "0";
   requires "Test::Warnings" => "0.009";
   requires "strict" => "0";
 };
