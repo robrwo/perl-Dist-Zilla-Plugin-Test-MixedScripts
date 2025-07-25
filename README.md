@@ -94,6 +94,10 @@ Robert Rothenberg <rrwo@cpan.org>
 This code was based on [Dist::Zilla::Plugin::Test::EOL](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3ATest%3A%3AEOL) by Florian Ragwitz <rafl@debian.org>, Caleb Cushing
 <xenoterracide@gmail.com> and Karen Etheridge <ether@cpan.org>.
 
+# CONTRIBUTOR
+
+Graham Knop <haarg@haarg.org>
+
 # COPYRIGHT AND LICENSE
 
 This software is copyright (c) 2025 by Robert Rothenberg.
