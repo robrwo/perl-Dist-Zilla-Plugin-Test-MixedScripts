@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Fixed minor typos.
 
+  - Improved POD formatting (GH#4 @haarg)
+
   [Tests]
   - Use Test2 instead of Test::More for the generated tests. (GH#3 @haarg)
 

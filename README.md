@@ -13,7 +13,7 @@ This generates an author [Test::MixedScripts](https://metacpan.org/pod/Test%3A%3
 This is an extension of [Dist::Zilla::Plugin::InlineFiles](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3AInlineFiles), providing the file `xt/author/mixed-unicode-scripts.t` for
 testing against mixed Unicode scripts that are potentially confusing or malicious.
 
-For example, the text for the domain names "оnе.example.com" and "one.example.com" look indistinguishable in many fonts,
+For example, the text for the domain names `оnе.example.com` and `one.example.com` look indistinguishable in many fonts,
 but the first one has Cyrillic letters.  If your software interacted with a service on the second domain, then someone
 can operate a service on the first domain and attempt to fool developers into using their domain instead.
 
