@@ -2,6 +2,14 @@
 
 Dist::Zilla::Plugin::Test::MixedScripts - author tests to ensure there is no mixed Unicode
 
+# SYNOPSIS
+
+In the `dist.ini` add:
+
+```
+[Test::MixedScripts]
+```
+
 # DESCRIPTION
 
 This generates an author [Test::MixedScripts](https://metacpan.org/pod/Test%3A%3AMixedScripts).
@@ -18,11 +26,12 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.1.5(2025-08-01T15:33:50+01:00)
+Changes for version v0.1.5(2025-08-01T15:36:35+01:00)
 
 - Documentation
     - Added overlooked credit to Changes.
     - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
+    - Added a SYNOPSIS.
 - Toolchain
     - Fixed Dist::Zilla configuration. (@haarg)
 

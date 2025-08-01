@@ -34,6 +34,12 @@ our $VERSION = 'v0.1.5';
 
 =end :prelude
 
+=head1 SYNOPSIS
+
+In the F<dist.ini> add:
+
+    [Test::MixedScripts]
+
 =head1 DESCRIPTION
 
 This generates an author L<Test::MixedScripts>.
