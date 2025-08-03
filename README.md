@@ -26,14 +26,10 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.1.5(2025-08-01T15:36:35+01:00)
+Changes for version v0.1.6 (2025-08-03)
 
-- Documentation
-    - Added overlooked credit to Changes.
-    - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
-    - Added a SYNOPSIS.
 - Toolchain
-    - Fixed Dist::Zilla configuration. (@haarg)
+    - Undid some changes to Dist::Zilla configuration.
 
 See the `Changes` file for more details.
 
@@ -56,6 +52,8 @@ This module lists the following modules as runtime dependencies:
 - [namespace::autoclean](https://metacpan.org/pod/namespace%3A%3Aautoclean)
 - [perl](https://metacpan.org/pod/perl) version v5.16.0 or later
 - [warnings](https://metacpan.org/pod/warnings)
+
+See the `cpanfile` file for the full list of prerequisites.
 
 # INSTALLATION
 
