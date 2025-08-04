@@ -26,8 +26,10 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.1.6 (2025-08-03)
+Changes for version v0.1.6 (2025-08-04)
 
+- Documentation
+    - Fixed errors in README.
 - Toolchain
     - Undid some changes to Dist::Zilla configuration.
 
@@ -120,6 +122,8 @@ This code was based on [Dist::Zilla::Plugin::Test::EOL](https://metacpan.org/pod
 <xenoterracide@gmail.com> and Karen Etheridge <ether@cpan.org>.
 
 # CONTRIBUTOR
+
+Graham Knop <haarg@haarg.org>
 
 # COPYRIGHT AND LICENSE
 
