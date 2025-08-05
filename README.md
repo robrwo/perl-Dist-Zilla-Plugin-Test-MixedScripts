@@ -26,10 +26,11 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.1.6 (2025-08-04)
+Changes for version v0.1.6 (2025-08-05)
 
 - Documentation
     - Fixed errors in README.
+    - Removed separate INSTALL file.
 - Toolchain
     - Undid some changes to Dist::Zilla configuration.
 
@@ -88,7 +89,7 @@ dzil test
 dzil install --install-command="cpan ."
 ```
 
-For more information, see the `INSTALL` file included with this distribution.
+For more information, see [How to install CPAN modules](https://www.cpan.org/modules/INSTALL.html).
 
 # SUPPORT
 
