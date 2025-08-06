@@ -29,20 +29,10 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.2.0 (2025-08-06)
+Changes for version v0.2.1 (2025-08-06)
 
-- Incompatible Changes
-    - Increased the minimum Perl version to v5.20, since that is what Dist::Zilla now requires.
-- Documentation
-    - Fixed errors in README.
-    - Removed separate INSTALL file.
-    - Updated SYNOPSIS.
 - Tests
-    - Moved author tests into the xt directory.
-- Toolchain
-    - Undid some changes to Dist::Zilla configuration.
-    - Set up GitHub workflow for testing.
-    - Ensure local-lib is not included in distribution.
+    - Fix issues with author test configuration.
 
 See the `Changes` file for more details.
 
