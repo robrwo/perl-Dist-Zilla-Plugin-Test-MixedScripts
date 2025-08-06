@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::Test::MixedScripts;
 
-use v5.16;
+use v5.20;
 use warnings;
 
 # ABSTRACT: author tests to ensure there is no mixed Unicode
@@ -26,7 +26,7 @@ with
   },
   'Dist::Zilla::Role::PrereqSource';
 
-our $VERSION = 'v0.1.6';
+our $VERSION = 'v0.2.0';
 
 =begin :prelude
 

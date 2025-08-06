@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Incompatible Changes]
+  - Increased the minimum Perl version to v5.20, since that is what Dist::Zilla now requires.
+
   [Documentation]
   - Fixed errors in README.
 

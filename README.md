@@ -29,8 +29,10 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.1.6 (2025-08-06)
+Changes for version v0.2.0 (2025-08-06)
 
+- Incompatible Changes
+    - Increased the minimum Perl version to v5.20, since that is what Dist::Zilla now requires.
 - Documentation
     - Fixed errors in README.
     - Removed separate INSTALL file.
@@ -61,7 +63,7 @@ This module lists the following modules as runtime dependencies:
 - [Path::Tiny](https://metacpan.org/pod/Path%3A%3ATiny)
 - [Sub::Exporter::ForMethods](https://metacpan.org/pod/Sub%3A%3AExporter%3A%3AForMethods)
 - [namespace::autoclean](https://metacpan.org/pod/namespace%3A%3Aautoclean)
-- [perl](https://metacpan.org/pod/perl) version v5.16.0 or later
+- [perl](https://metacpan.org/pod/perl) version v5.20.0 or later
 - [warnings](https://metacpan.org/pod/warnings)
 
 See the `cpanfile` file for the full list of prerequisites.
