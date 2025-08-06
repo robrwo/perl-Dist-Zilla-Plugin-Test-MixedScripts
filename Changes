@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Removed separate INSTALL file.
 
+  - Updated SYNOPSIS.
+
   [Tests]
   - Moved author tests into the xt directory.
 

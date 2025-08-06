@@ -39,6 +39,9 @@ our $VERSION = 'v0.1.6';
 In the F<dist.ini> add:
 
     [Test::MixedScripts]
+    ; authordep Test::MixedScripts
+    script = Latin
+    script = Common
 
 =head1 DESCRIPTION
 

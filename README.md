@@ -8,6 +8,9 @@ In the `dist.ini` add:
 
 ```
 [Test::MixedScripts]
+; authordep Test::MixedScripts
+script = Latin
+script = Common
 ```
 
 # DESCRIPTION
@@ -31,6 +34,7 @@ Changes for version v0.1.6 (2025-08-06)
 - Documentation
     - Fixed errors in README.
     - Removed separate INSTALL file.
+    - Updated SYNOPSIS.
 - Tests
     - Moved author tests into the xt directory.
 - Toolchain
