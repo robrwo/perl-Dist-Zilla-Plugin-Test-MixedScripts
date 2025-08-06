@@ -35,6 +35,7 @@ Changes for version v0.1.6 (2025-08-06)
     - Moved author tests into the xt directory.
 - Toolchain
     - Undid some changes to Dist::Zilla configuration.
+    - Set up GitHub workflow for testing.
 
 See the `Changes` file for more details.
 

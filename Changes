@@ -12,6 +12,8 @@ Revision history for {{ $dist->name }}:
   [Toolchain]
   - Undid some changes to Dist::Zilla configuration.
 
+  - Set up GitHub workflow for testing.
+
 v0.1.5    2025-08-01 15:44:57+01:00 Europe/London
   [Documentation]
   - Added overlooked credit to Changes.
