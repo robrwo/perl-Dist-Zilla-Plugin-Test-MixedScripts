@@ -11,6 +11,7 @@ use List::Util 1.45 qw( uniqstr );
 use Path::Tiny;
 use Sub::Exporter::ForMethods 'method_installer';
 use Data::Section 0.004 { installer => method_installer }, '-setup';
+use Dist::Zilla::File::InMemory;
 use Moose::Util::TypeConstraints qw( role_type );
 
 use namespace::autoclean;
@@ -150,7 +151,7 @@ around dump_config => sub( $orig, $self ) {
 };
 
 sub gather_files($self) {
-    require Dist::Zilla::File::InMemory;
+
     $self->add_file(
         $self->_file_obj(
             Dist::Zilla::File::InMemory->new(
