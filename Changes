@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Tests]
+  - Fix issues with author test configuration.
 
 v0.2.0    2025-08-06 17:02:57+01:00 Europe/London
   [Incompatible Changes]
