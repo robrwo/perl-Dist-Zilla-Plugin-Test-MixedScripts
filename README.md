@@ -26,11 +26,13 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.1.6 (2025-08-05)
+Changes for version v0.1.6 (2025-08-06)
 
 - Documentation
     - Fixed errors in README.
     - Removed separate INSTALL file.
+- Tests
+    - Moved author tests into the xt directory.
 - Toolchain
     - Undid some changes to Dist::Zilla configuration.
 
