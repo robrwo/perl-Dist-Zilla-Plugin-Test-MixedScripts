@@ -15,6 +15,8 @@ use Moose::Util::TypeConstraints qw( role_type );
 
 use namespace::autoclean;
 
+use experimental qw( postderef signatures );
+
 with
   'Dist::Zilla::Role::FileGatherer',
   'Dist::Zilla::Role::FileMunger',
@@ -136,20 +138,18 @@ has _file_obj => (
     isa => role_type('Dist::Zilla::Role::File'),
 );
 
-around dump_config => sub {
-    my ( $orig, $self ) = @_;
+around dump_config => sub( $orig, $self ) {
     my $config = $self->$orig;
     $config->{ +__PACKAGE__ } = {
         filename => $self->filename,
-        finder   => [ sort @{ $self->finder } ],
+        finder   => [ sort $self->finder->@* ],
         scripts  => [ $self->scripts ],
         blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
     };
     return $config;
 };
 
-sub gather_files {
-    my $self = shift;
+sub gather_files($self) {
     require Dist::Zilla::File::InMemory;
     $self->add_file(
         $self->_file_obj(
@@ -162,17 +162,16 @@ sub gather_files {
     return;
 }
 
-sub munge_files {
-    my $self = shift;
+sub munge_files($self) {
 
     # Based on Dist::Zilla::Plugin::GatherDir
     my $exclude = qr/\000/;
-    $exclude = qr/(?:$exclude)|$_/ for @{ $self->exclude };
+    $exclude = qr/(?:$exclude)|$_/ for $self->exclude->@*;
 
     my @filenames = map { path( $_->name )->relative('.')->stringify }
       grep { not( $_->can('is_bytes') and $_->is_bytes ) }
       grep { $_ !~ $exclude }
-      @{ $self->found_files };
+      $self->found_files->@*;
     push @filenames, $self->files;
     $self->log_debug( 'adding file ' . $_ ) for @filenames;
 
@@ -193,8 +192,7 @@ sub munge_files {
     return;
 }
 
-sub register_prereqs {
-    my $self = shift;
+sub register_prereqs($self) {
     $self->zilla->register_prereqs(
         {
             phase => 'develop',

@@ -62,6 +62,7 @@ This module lists the following modules as runtime dependencies:
 - [Moose::Util::TypeConstraints](https://metacpan.org/pod/Moose%3A%3AUtil%3A%3ATypeConstraints)
 - [Path::Tiny](https://metacpan.org/pod/Path%3A%3ATiny)
 - [Sub::Exporter::ForMethods](https://metacpan.org/pod/Sub%3A%3AExporter%3A%3AForMethods)
+- [experimental](https://metacpan.org/pod/experimental)
 - [namespace::autoclean](https://metacpan.org/pod/namespace%3A%3Aautoclean)
 - [perl](https://metacpan.org/pod/perl) version v5.20.0 or later
 - [warnings](https://metacpan.org/pod/warnings)

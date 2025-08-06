@@ -13,6 +13,7 @@ requires "Moose" => "0";
 requires "Moose::Util::TypeConstraints" => "0";
 requires "Path::Tiny" => "0";
 requires "Sub::Exporter::ForMethods" => "0";
+requires "experimental" => "0";
 requires "namespace::autoclean" => "0";
 requires "perl" => "v5.20.0";
 requires "warnings" => "0";
