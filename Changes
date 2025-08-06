@@ -14,6 +14,8 @@ Revision history for {{ $dist->name }}:
 
   - Set up GitHub workflow for testing.
 
+  - Ensure local-lib is not included in distribution.
+
 v0.1.5    2025-08-01 15:44:57+01:00 Europe/London
   [Documentation]
   - Added overlooked credit to Changes.

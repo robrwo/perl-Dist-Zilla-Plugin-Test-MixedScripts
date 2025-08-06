@@ -36,6 +36,7 @@ Changes for version v0.1.6 (2025-08-06)
 - Toolchain
     - Undid some changes to Dist::Zilla configuration.
     - Set up GitHub workflow for testing.
+    - Ensure local-lib is not included in distribution.
 
 See the `Changes` file for more details.
 
