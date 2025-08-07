@@ -29,15 +29,10 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.2.1 (2025-08-07)
+Changes for version v0.2.2 (2025-08-07)
 
-- Enhancements
-    - Internal code improvements.
-- Documentation
-    - Updated SUPPORT section to be consistent with minimum Perl version.
 - Tests
-    - Fix issues with author test configuration.
-    - Added more author tests.
+    - Internal code improvements.
 
 See the `Changes` file for more details.
 

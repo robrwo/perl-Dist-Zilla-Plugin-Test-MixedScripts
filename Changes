@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Tests]
+  - Internal code improvements.
 
 v0.2.1    2025-08-07 16:48:15+01:00 Europe/London
   [Enhancements]
