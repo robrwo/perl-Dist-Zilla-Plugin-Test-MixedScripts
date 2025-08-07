@@ -16,7 +16,6 @@ requires "Sub::Exporter::ForMethods" => "0";
 requires "experimental" => "0";
 requires "namespace::autoclean" => "0";
 requires "perl" => "v5.20.0";
-requires "warnings" => "0";
 
 on 'build' => sub {
   requires "ExtUtils::MakeMaker" => "7.22";
@@ -34,6 +33,7 @@ on 'test' => sub {
   requires "Test::More" => "0";
   requires "Test::Warnings" => "0.009";
   requires "strict" => "0";
+  requires "warnings" => "0";
 };
 
 on 'test' => sub {
@@ -69,4 +69,5 @@ on 'develop' => sub {
   requires "Test::TrailingSpace" => "0.0203";
   requires "Test::Vars" => "0.015";
   requires "strict" => "0";
+  requires "warnings" => "0";
 };

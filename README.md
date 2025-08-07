@@ -31,6 +31,8 @@ developer to copy and paste into their code.
 
 Changes for version v0.2.1 (2025-08-07)
 
+- Enhancements
+    - Internal code improvements.
 - Documentation
     - Updated SUPPORT section to be consistent with minimum Perl version.
 - Tests
@@ -58,7 +60,6 @@ This module lists the following modules as runtime dependencies:
 - [experimental](https://metacpan.org/pod/experimental)
 - [namespace::autoclean](https://metacpan.org/pod/namespace%3A%3Aautoclean)
 - [perl](https://metacpan.org/pod/perl) version v5.20.0 or later
-- [warnings](https://metacpan.org/pod/warnings)
 
 See the `cpanfile` file for the full list of prerequisites.
 

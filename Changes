@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Internal code improvements.
+
   [Documentation]
   - Updated SUPPORT section to be consistent with minimum Perl version.
 
