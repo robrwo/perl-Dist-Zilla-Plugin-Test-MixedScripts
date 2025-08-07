@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Documentation]
+  - Updated SUPPORT section to be consistent with minimum Perl version.
+
   [Tests]
   - Fix issues with author test configuration.
 

@@ -31,6 +31,8 @@ developer to copy and paste into their code.
 
 Changes for version v0.2.1 (2025-08-07)
 
+- Documentation
+    - Updated SUPPORT section to be consistent with minimum Perl version.
 - Tests
     - Fix issues with author test configuration.
     - Added more author tests.
@@ -97,7 +99,7 @@ For more information, see [How to install CPAN modules](https://www.cpan.org/mod
 
 Only the latest version of this module will be supported.
 
-This module requires Perl v5.16 or later.  Future releases may only support Perl versions released in the last ten
+This module requires Perl v5.20 or later.  Future releases may only support Perl versions released in the last ten
 years.
 
 ## Reporting Bugs and Submitting Feature Requests
