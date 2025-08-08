@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Internal code improvements.
+
   [Tests]
   - Internal code improvements.
 

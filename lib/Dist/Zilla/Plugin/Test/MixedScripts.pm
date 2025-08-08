@@ -11,7 +11,7 @@ use Path::Tiny;
 use Sub::Exporter::ForMethods 'method_installer';
 use Data::Section 0.004 { installer => method_installer }, '-setup';
 use Dist::Zilla::File::InMemory;
-use Moose::Util::TypeConstraints qw( role_type );
+use Types::Common qw( ArrayRef ConsumerOf NonEmptySimpleStr );
 
 use namespace::autoclean;
 
@@ -97,7 +97,7 @@ This option can be repeated to specify multiple additional files.
 =cut
 
 has files => (
-    isa => 'ArrayRef[Str]',
+    isa => ArrayRef[NonEmptySimpleStr],
     traits => ['Array'],
     handles => { files => 'elements' },
     lazy => 1,
@@ -114,7 +114,7 @@ This option can be repeated to specify multiple patterns.
 
 has exclude => (
     is      => 'ro',
-    isa     => 'ArrayRef',
+    isa => ArrayRef[NonEmptySimpleStr],
     default => sub { [] },
 );
 
@@ -125,7 +125,7 @@ This specifies the scripts to test for.  If none are specified, it defaults to t
 =cut
 
 has scripts => (
-    isa     => 'ArrayRef[Str]',
+    isa => ArrayRef[NonEmptySimpleStr],
     traits  => ['Array'],
     handles => { scripts => 'elements' },
     lazy    => 1,
@@ -135,7 +135,7 @@ has scripts => (
 
 has _file_obj => (
     is  => 'rw',
-    isa => role_type('Dist::Zilla::Role::File'),
+    isa => ConsumerOf[ 'Dist::Zilla::Role::File' ],
 );
 
 around dump_config => sub( $orig, $self ) {
