@@ -164,13 +164,12 @@ sub gather_files($self) {
 
 sub munge_files($self) {
 
-    # Based on Dist::Zilla::Plugin::GatherDir
-    my $exclude = qr/\000/;
-    $exclude = qr/(?:$exclude)|$_/ for $self->exclude->@*;
+    my $pattern = join("|", map { "(?:$_)" } '\000', $self->exclude->@* );
+    my $exclude = qr/(?:$pattern)/;
 
     my @filenames = map { path( $_->name )->relative('.')->stringify }
       grep { not( $_->can('is_bytes') and $_->is_bytes ) }
-      grep { $_ !~ $exclude }
+      grep { $_->name !~ $exclude }
       $self->found_files->@*;
     push @filenames, $self->files;
     $self->log_debug( 'adding file ' . $_ ) for @filenames;

@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Internal code improvements.
 
+  [Bug Fixes]
+  - Fixed the `exclude` attribute.
+
   [Tests]
   - Internal code improvements.
 
