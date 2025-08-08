@@ -143,7 +143,7 @@ around dump_config => sub( $orig, $self ) {
     $config->{ +__PACKAGE__ } = {
         filename => $self->filename,
         finder   => [ sort $self->finder->@* ],
-        scripts  => [ $self->scripts ],
+        scripts  => [ sort $self->scripts ],
         blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
     };
     return $config;
@@ -184,7 +184,7 @@ sub munge_files($self) {
                 dist      => \( $self->zilla ),
                 plugin    => \$self,
                 filenames => [ sort @filenames ],
-                scripts   => [ uniqstr @scripts ],
+                scripts   => [ sort ( uniqstr( @scripts ) ) ],
             },
         )
     );

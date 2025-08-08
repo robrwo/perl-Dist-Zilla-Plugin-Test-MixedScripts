@@ -7,6 +7,8 @@ Revision history for {{ $dist->name }}:
   [Bug Fixes]
   - Fixed the `exclude` attribute.
 
+  - The `scripts` are sorted to ensure consistently generated test scripts.
+
   [Tests]
   - Internal code improvements.
 
