@@ -10,6 +10,8 @@ Revision history for {{ $dist->name }}:
   - The `scripts` are sorted to ensure consistently generated test scripts.
 
   [Tests]
+  - Added more tests.
+
   - Internal code improvements.
 
 v0.2.1    2025-08-07 16:48:15+01:00 Europe/London
