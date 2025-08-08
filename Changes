@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Tests]
+  - Use Dumper instead of explain for test diagnostics.
 
 v0.2.2    2025-08-08 14:09:20+01:00 Europe/London
   [Enhancements]

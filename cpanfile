@@ -23,6 +23,7 @@ on 'build' => sub {
 };
 
 on 'test' => sub {
+  requires "Data::Dumper" => "0";
   requires "File::Spec" => "0";
   requires "File::pushd" => "0";
   requires "FindBin" => "0";
