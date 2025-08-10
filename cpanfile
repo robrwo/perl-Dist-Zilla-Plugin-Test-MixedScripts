@@ -26,7 +26,6 @@ on 'test' => sub {
   requires "Data::Dumper" => "2.154";
   requires "File::Spec" => "0";
   requires "File::pushd" => "0";
-  requires "FindBin" => "0";
   requires "Module::Metadata" => "1.000015";
   requires "Test2::V0" => "0";
   requires "Test::DZil" => "0";

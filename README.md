@@ -34,6 +34,7 @@ Changes for version v0.2.3 (2025-08-10)
 - Tests
     - Use Dumper instead of explain for test diagnostics.
     - Add more author tests.
+    - Cleaned up cut-and-paste from other tests.
 
 See the `Changes` file for more details.
 

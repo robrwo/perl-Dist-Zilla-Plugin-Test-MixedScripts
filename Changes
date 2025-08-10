@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Add more author tests.
 
+  - Cleaned up cut-and-paste from other tests.
+
 v0.2.2    2025-08-08 14:09:20+01:00 Europe/London
   [Enhancements]
   - Internal code improvements.
