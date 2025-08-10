@@ -6,7 +6,7 @@ use Test2::V0;
 use Test::Warnings 0.009 qw( :no_end_test had_no_warnings );
 use Test::DZil;
 
-use Data::Dumper qw( Dumper );
+use Data::Dumper 2.154 qw( Dumper );
 use Path::Tiny;
 use File::pushd qw( pushd );
 
