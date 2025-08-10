@@ -63,6 +63,7 @@ on 'develop' => sub {
   requires "Test::Fixme" => "0";
   requires "Test::Kwalitee" => "1.21";
   requires "Test::MinimumVersion" => "0";
+  requires "Test::Mojibake" => "0";
   requires "Test::More" => "0.96";
   requires "Test::NoTabs" => "0";
   requires "Test::Perl::Critic" => "0";
