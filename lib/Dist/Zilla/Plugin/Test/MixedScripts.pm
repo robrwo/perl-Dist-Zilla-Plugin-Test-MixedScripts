@@ -155,7 +155,7 @@ sub gather_files($self) {
         $self->_file_obj(
             Dist::Zilla::File::InMemory->new(
                 name    => $self->filename,
-                content => ${ $self->section_data('__TEST__') },
+                content => $self->section_data('__TEST__')->$*,
             )
         )
     );
