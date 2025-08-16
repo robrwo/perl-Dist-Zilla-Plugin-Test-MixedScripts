@@ -29,8 +29,10 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.2.3 (2025-08-10)
+Changes for version v0.2.3 (2025-08-16)
 
+- Enhancements
+    - Internal code improvements.
 - Tests
     - Use Dumper instead of explain for test diagnostics.
     - Add more author tests.
