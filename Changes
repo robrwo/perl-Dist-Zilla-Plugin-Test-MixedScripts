@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Internal code improvements.
+
   [Tests]
   - Use Dumper instead of explain for test diagnostics.
 
