@@ -28,7 +28,7 @@ with
   },
   'Dist::Zilla::Role::PrereqSource';
 
-our $VERSION = 'v0.2.4';
+our $VERSION = 'v0.2.5';
 
 =begin :prelude
 

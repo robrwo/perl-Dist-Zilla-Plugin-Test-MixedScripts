@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.2.4    2026-02-08 10:48:09+00:00 Europe/London
   [Documentation]
   - Updated SUPPORT section to clarify the minimum Perl version.
 
