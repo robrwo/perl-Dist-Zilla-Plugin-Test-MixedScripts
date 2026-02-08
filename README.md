@@ -34,6 +34,7 @@ Changes for version v0.2.4 (2026-02-08)
 - Documentation
     - Updated SUPPORT section to clarify the minimum Perl version.
     - Bumped copyright year.
+    - Updated LICENSE file.
 
 See the `Changes` file for more details.
 

@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Bumped copyright year.
 
+  - Updated LICENSE file.
+
   [Tests]
   - Updated author tests.
 
