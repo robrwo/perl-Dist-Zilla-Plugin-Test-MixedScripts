@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Updated SUPPORT section to clarify the minimum Perl version.
 
+  - Bumped copyright year.
+
   [Tests]
   - Updated author tests.
 
