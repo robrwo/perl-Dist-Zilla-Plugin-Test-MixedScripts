@@ -29,14 +29,10 @@ developer to copy and paste into their code.
 
 # RECENT CHANGES
 
-Changes for version v0.2.4 (2026-02-08)
+Changes for version v0.2.5 (2026-04-09)
 
-- Documentation
-    - Updated SUPPORT section to clarify the minimum Perl version.
-    - Bumped copyright year.
-    - Updated LICENSE file.
-- Tests
-    - Updated author tests.
+- Other
+    - Added DOAP metadata to the distribution.
 
 See the `Changes` file for more details.
 

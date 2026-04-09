@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project
+  xmlns="http://usefulinc.com/ns/doap#"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  >
+  <name>Dist-Zilla-Plugin-Test-MixedScripts</name>
+  <shortdesc>author tests to ensure there is no mixed Unicode</shortdesc>
+  <category rdfs:label="unicode" />
+  <category rdfs:label="security" />
+  <category rdfs:label="xtest" />
+  <category rdfs:label="extra" />
+  <category rdfs:label="tests" />
+  <category rdfs:label="author" />
+  <category rdfs:label="tests" />
+  <developer>
+    <foaf:Person>
+      <foaf:name>Robert Rothenberg</foaf:name>
+      <foaf:mbox rdf:resource="mailto:rrwo@cpan.org" />
+    </foaf:Person>
+  </developer>
+  <helper>
+    <foaf:Person>
+      <foaf:name>Graham Knop</foaf:name>
+      <foaf:mbox rdf:resource="mailto:haarg@haarg.org" />
+    </foaf:Person>
+  </helper>
+  <license rdf:resource="http://dev.perl.org/licenses/" />
+  <bug-database rdf:resource="https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts/issues" />
+  <repository>
+    <GitRepository>
+      <browse rdf:resource="https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts" />
+      <location rdf:resource="git://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts.git" />
+    </GitRepository>
+  </repository>
+  <programming-language>Perl</programming-language>
+</Project>
