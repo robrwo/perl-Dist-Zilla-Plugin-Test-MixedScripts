@@ -114,7 +114,7 @@ then see `SECURITY.md` for instructions how to report security vulnerabilities.
 # SOURCE
 
 The development version is on github at [https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts](https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts)
-and may be cloned from [git://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts.git](git://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts.git)
+and may be cloned from [https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts.git](https://github.com/robrwo/perl-Dist-Zilla-Plugin-Test-MixedScripts.git)
 
 # AUTHOR
 
