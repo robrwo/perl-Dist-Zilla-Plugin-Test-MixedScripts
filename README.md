@@ -31,6 +31,8 @@ developer to copy and paste into their code.
 
 Changes for version v0.2.5 (2026-04-09)
 
+- Documentation
+    - Updated LICENSE file.
 - Other
     - Added DOAP metadata to the distribution.
 
